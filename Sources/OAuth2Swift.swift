@@ -249,8 +249,9 @@ open class OAuth2Swift: OAuthSwift {
     open func renewAccessToken(withRefreshToken refreshToken: String, parameters: OAuthSwift.Parameters? = nil, headers: OAuthSwift.Headers? = nil, customKeypath: String? = nil, customAccessTokenParams: Dictionary<String,String>? = nil, completionHandler completion: @escaping TokenCompletionHandler) -> OAuthSwiftRequestHandle? {
         return self.client.renewAccessToken(accessTokenUrl: self.accessTokenUrl, withRefreshToken: refreshToken,
                                             parameters: parameters ?? OAuthSwift.Parameters(),
-                                            headers: headers, customKeypath: customKeypath, 
+                                            headers: headers, 
                                             accessTokenBasicAuthentification: self.accessTokenBasicAuthentification,
+                                            customKeypath: customKeypath, 
                                             customAccessTokenParams: customAccessTokenParams,
                                             completionHandler: completion)
     }
